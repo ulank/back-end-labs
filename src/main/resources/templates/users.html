@@ -1,0 +1,61 @@
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 3.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/main.css">
+
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col mx-5">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col"> Name</th>
+                    <th scope="col"> Age</th>
+                    <th scope="col"> University</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr scope="row" th:each="user : ${users}">
+                    <td><span th:text="${user.name}"> </span></td>
+                    <td><span th:text="${user.age}">  </span></td>
+                    <td><span th:text="${user.university.name}">  </span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <form action="/users/addUser" th:action="@{/addUser}" th:object="${newUser}" method="POST">
+                <div class="form-group">
+                    <label for="inputName">Name </label>
+                    <input type="text" th:field="*{name}" class="form-control" id="inputName" placeholder="Enter name">
+                </div>
+                <div class="form-group">
+                    <label for="inputAge">Age</label>
+                    <input type="number" th:field="*{age}" class="form-control" id="inputAge" placeholder="Enter age">
+                </div>
+                <div class="form-group">
+                    <label>University</label>
+                    <select id="selectUniversity" class="form-control d-block" th:field="*{university}">
+                        <option th:each="u : ${universites}" th:value="${u.id}" th:text="${u.name}"></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <a type="button" class="btn btn-link mt-2" th:href="@{/newuniversity}">Insert own</a>
+                </div>
+                <button type="submit" class="btn mt-2 btn-dark">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function insertNewUniversity() {
+        }
+    </script>
+</div>
+</body>
+</html>`

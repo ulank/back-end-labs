@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+		http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+		http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+    <changeSet id="0" author="Kozhabekov Ulan">
+        <sqlFile path="db/changelog/changes/create-scheme-2-11-2023.sql"/>
+    </changeSet>
+    <changeSet id="1" author="Kozhabekov Ulan">
+        <sqlFile path="db/changelog/changes/create-table-students-2-11-2023.sql"/>
+    </changeSet>
+    <changeSet id="2" author="Kozhabekov Ulan">
+        <sqlFile path="db/changelog/changes/insert-students-2-11-2023.sql"/>
+    </changeSet>
+    <changeSet id="3" author="Kozhabekov Ulan">
+        <sqlFile path="db/changelog/changes/create-table-cars-2-17-2023.sql"/>
+    </changeSet>
+    <changeSet id="4" author="Kozhabekov Ulan">
+        <sqlFile path="db/changelog/changes/insert-cars-2-17-2023.sql"/>
+    </changeSet>
+    <changeSet id="5" author="Kozhabekov Ulan">
+        <sqlFile path="db/changelog/changes/create-insert-universites-and-users-2-24-2023.sql"/>
+    </changeSet>
+    <changeSet id="6" author="Kozhabekov Ulan">
+        <sqlFile path="db/changelog/changes/footbal-2-25-2023.sql"/>
+    </changeSet>
+</databaseChangeLog>

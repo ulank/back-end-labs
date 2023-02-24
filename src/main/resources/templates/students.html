@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Students | Lab 1.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div>
+    <h5>
+        SEARCH BY NAME:
+    </h5>
+    <form th:action="@{/search}" method="post">
+        <label>
+            <select name="type" th:value="${type}">
+                <option>NAME</option>
+                <option>SURNAME</option>
+                <option>GROUP</option>
+            </select>
+        </label>
+        <label>
+            <input type="text" name="slug" th:value="${slug}">
+        </label>
+        <button type="submit">
+            SEARCH
+        </button>
+    </form>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th> NAME </th>
+                <th> SURNAME </th>
+                <th> GROUP </th>
+                <th> ADMITTED YEAR </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${students.empty}">
+                <td colspan="2"> No Students Available </td>
+            </tr>
+            <tr th:each="student : ${students}">
+                <td><span th:text="${student.name}"> NAME </span></td>
+                <td><span th:text="${student.surname}"> SURNAME </span></td>
+                <td><span th:text="${student.group}"> GROUP </span></td>
+                <td><span th:text="${student.admittedYear}"> ADMITTED YEAR </span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

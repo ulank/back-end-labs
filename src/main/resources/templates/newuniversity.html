@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New University</title>
+</head>
+<body>
+<form action="#" th:action="@{/addUniversity}" th:object="${university}"
+      method="POST">
+    <input type="text" th:field="*{name}" placeholder="University Name">
+    <button type="submit" class="btn btn-info col-2">Add
+        University
+    </button>
+</form>
+<hr>
+<a th:href="@{/}"> Back to User List</a>
+</body>
+</html>

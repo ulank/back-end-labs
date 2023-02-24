@@ -1,0 +1,16 @@
+spring:
+  devtools:
+    restart:
+      quiet-period: 1s
+      poll-interval: 2s
+  datasource:
+    url: jdbc:postgresql://localhost:5432/iitu
+    username: postgres
+    password: admin
+  jpa:
+    show-sql: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+server:
+  port: 8081
+
